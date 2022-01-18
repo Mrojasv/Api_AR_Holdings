@@ -21,11 +21,11 @@ namespace AR_Holdings.Controllers
         }
 
         [HttpGet]
-        public string ProductsShopify()
+        public async Task<string> ProductsShopifyAsync()
         {
             try
             {
-                _Synchronize.ProductsShopify();
+                await _Synchronize.ProductsShopifyAsync();
 
                 HttpContext.Response.StatusCode = StatusCodes.Status200OK;
                 return "OK";

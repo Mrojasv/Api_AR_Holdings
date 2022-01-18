@@ -35,6 +35,7 @@ namespace AR_Holdings
             services.AddSingleton<IDapper, DBDapper>();
             services.AddSingleton<IAuthetication, Authetication>();
             services.AddSingleton<ISynchronize, Synchronize>();
+            services.AddSingleton<IOrders, Orders>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

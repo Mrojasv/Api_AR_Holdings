@@ -2,15 +2,18 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Threading.Tasks;
 using AR_Holdings.DBContent;
+using AR_Holdings.Utilities;
 using Dapper;
+using ShopifySharp;
 using static AR_Holdings.Models.Products;
 
 namespace AR_Holdings.Services
 {
     public interface ISynchronize
     {
-        void ProductsShopify();
+        Task ProductsShopifyAsync();
     }
 
     public class Synchronize: ISynchronize
@@ -22,8 +25,7 @@ namespace AR_Holdings.Services
             _Dapper = Dapper;
         }
 
-
-        public void ProductsShopify()
+        public async Task ProductsShopifyAsync()
         {
             using IDbConnection db = _Dapper.GetDbconnection();
             try
@@ -42,6 +44,8 @@ namespace AR_Holdings.Services
 
                     //Obtener lista del inventario de Shopify, requiero accesToken??
                     var _ShopifyInventory = new List<ShopifyInventory>();
+                    var _shopifyService = new ProductService(Settings.General.ShopifyUrl, Settings.General.ShopAccessToken);
+                    var _products = await _shopifyService.ListAsync();
 
                     foreach (ColaArticulos _product in _ColaArticulos)
                     {

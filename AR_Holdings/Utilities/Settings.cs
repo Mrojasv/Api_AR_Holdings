@@ -13,6 +13,7 @@ namespace AR_Holdings.Utilities
         public string ShopifyApiKey { get; set; }
         public string ShopifySecretKey { get; set; }
         public string RedirectURL { get; set; }
+        public string ShopAccessToken { get; set; }
     }
 
     public class ConnectionStrings
