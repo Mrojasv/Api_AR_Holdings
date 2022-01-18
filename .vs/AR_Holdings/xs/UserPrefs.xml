@@ -1,16 +1,21 @@
 ﻿<Properties StartupConfiguration="{4CD33DB4-4491-4C15-A84B-892F59533B33}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="AR_Holdings/appsettings.json">
+  <MonoDevelop.Ide.Workbench ActiveDocument="AR_Holdings/Models/Products.cs">
     <Files>
-      <File FileName="AR_Holdings/Controllers/OAuthController.cs" Line="31" Column="1" />
-      <File FileName="AR_Holdings/appsettings.json" Line="1" Column="1" />
+      <File FileName="AR_Holdings/appsettings.json" Line="17" Column="68" />
+      <File FileName="AR_Holdings/Controllers/ProductsController.cs" Line="1" Column="1" />
+      <File FileName="AR_Holdings/Services/Synchronize.cs" Line="46" Column="47" />
+      <File FileName="AR_Holdings/Models/Products.cs" Line="17" Column="32" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="AR_Holdings" expanded="True">
             <Node name="AR_Holdings" expanded="True">
-              <Node name="Controllers" expanded="True" />
-              <Node name="appsettings.json" expanded="True" selected="True" />
+              <Node name="DBContent" expanded="True" />
+              <Node name="Models" expanded="True">
+                <Node name="Products.cs" selected="True" />
+              </Node>
+              <Node name="Services" expanded="True" />
             </Node>
           </Node>
         </State>

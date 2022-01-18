@@ -12,6 +12,7 @@
     <None Remove="Services\" />
     <None Remove="DBContent\" />
     <None Remove="System.Data.SqlClient" />
+    <None Remove="Models\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="ShopifySharp" Version="5.14.4" />
@@ -22,5 +23,6 @@
     <Folder Include="Utilities\" />
     <Folder Include="Services\" />
     <Folder Include="DBContent\" />
+    <Folder Include="Models\" />
   </ItemGroup>
 </Project>
