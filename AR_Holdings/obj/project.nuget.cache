@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "oYsEYHISgULpl4Q+PB2eIhSFt7zKYEegBlhlrs/zOYkMCvbNBaZ1bSHDUReL6y2JyejFwrI3OwtQRLfgIDXhlw==",
+  "dgSpecHash": "eI7U2aYtXEe29IZ/8sp4uHAsUjQKp8pCEftSFnP/nWluzsWxExHnmINjpzYb4AO3f15x55aqpuExIxs5AGzqUQ==",
   "success": true,
-  "projectFilePath": "/Users/mrojas/Desktop/AR_Holdings/AR_Holdings/AR_Holdings/AR_Holdings.csproj",
+  "projectFilePath": "/Users/mrojas/Documents/Github/Api_AR_Holdings/AR_Holdings/AR_Holdings.csproj",
   "expectedPackageFiles": [
     "/Users/mrojas/.nuget/packages/dapper/2.0.123/dapper.2.0.123.nupkg.sha512",
     "/Users/mrojas/.nuget/packages/microsoft.extensions.dependencyinjection/6.0.0/microsoft.extensions.dependencyinjection.6.0.0.nupkg.sha512",

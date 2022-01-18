@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/mrojas/Desktop/AR_Holdings/AR_Holdings/AR_Holdings/AR_Holdings.csproj": {}
+    "/Users/mrojas/Documents/Github/Api_AR_Holdings/AR_Holdings/AR_Holdings.csproj": {}
   },
   "projects": {
-    "/Users/mrojas/Desktop/AR_Holdings/AR_Holdings/AR_Holdings/AR_Holdings.csproj": {
+    "/Users/mrojas/Documents/Github/Api_AR_Holdings/AR_Holdings/AR_Holdings.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/mrojas/Desktop/AR_Holdings/AR_Holdings/AR_Holdings/AR_Holdings.csproj",
+        "projectUniqueName": "/Users/mrojas/Documents/Github/Api_AR_Holdings/AR_Holdings/AR_Holdings.csproj",
         "projectName": "AR_Holdings",
-        "projectPath": "/Users/mrojas/Desktop/AR_Holdings/AR_Holdings/AR_Holdings/AR_Holdings.csproj",
+        "projectPath": "/Users/mrojas/Documents/Github/Api_AR_Holdings/AR_Holdings/AR_Holdings.csproj",
         "packagesPath": "/Users/mrojas/.nuget/packages/",
-        "outputPath": "/Users/mrojas/Desktop/AR_Holdings/AR_Holdings/AR_Holdings/obj/",
+        "outputPath": "/Users/mrojas/Documents/Github/Api_AR_Holdings/AR_Holdings/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/mrojas/.config/NuGet/NuGet.Config"
