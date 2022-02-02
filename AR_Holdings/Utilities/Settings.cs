@@ -11,6 +11,7 @@ namespace AR_Holdings.Utilities
     { 
         public string ShopifyUrl { get; set; }
         public string ShopifyApiKey { get; set; }
+        public string ShopifyPass { get; set; }
         public string ShopifySecretKey { get; set; }
         public string RedirectURL { get; set; }
         public string ShopAccessToken { get; set; }

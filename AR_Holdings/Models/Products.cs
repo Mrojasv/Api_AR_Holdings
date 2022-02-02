@@ -14,7 +14,7 @@ namespace AR_Holdings.Models
             [Required]
             public string SKU { get; set; }
             [Required]
-            public int Cantidad { get; set; }
+            public int? Cantidad { get; set; }
             [Required]
             public DateTime FechaRegistro { get; set; }
             public DateTime FechaActualizacion { get; set; }

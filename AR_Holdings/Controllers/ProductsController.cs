@@ -20,7 +20,7 @@ namespace AR_Holdings.Controllers
             _Synchronize = Synchronize;
         }
 
-        [HttpGet]
+        [HttpGet("ProductsShopifyAsync")]
         public async Task<string> ProductsShopifyAsync()
         {
             try

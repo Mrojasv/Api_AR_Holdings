@@ -12,7 +12,7 @@
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
-      "launchUrl": "api/OAuth",
+      "launchUrl": "api/Products/ProductsShopifyAsync",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
@@ -20,7 +20,7 @@
     "AR_Holdings": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "api/OAuth",
+      "launchUrl": "api/Products/ProductsShopifyAsync",
       "applicationUrl": "https://localhost:5001;http://localhost:5000",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"

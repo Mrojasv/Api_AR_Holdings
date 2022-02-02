@@ -33,7 +33,6 @@ namespace AR_Holdings
             services.AddControllers();
 
             services.AddSingleton<IDapper, DBDapper>();
-            services.AddSingleton<IAuthetication, Authetication>();
             services.AddSingleton<ISynchronize, Synchronize>();
             services.AddSingleton<IOrders, Orders>();
         }

@@ -39,35 +39,43 @@ namespace AR_Holdings.Services
                 using var tran = db.BeginTransaction();
                 try
                 {
-                    var _ColaArticulos = db.Query<ColaArticulos>($"SELECT ID, SKU, Cantidad, Sincronizado " +
+                    var _colaArticulos = db.Query<ColaArticulos>($"SELECT ID, SKU, Cantidad, Sincronizado " +
                                         $"FROM ColaArticulos ", null, commandType: CommandType.Text, transaction: tran).ToList();
 
-                    //Obtener lista del inventario de Shopify, requiero accesToken??
-                    var _ShopifyInventory = new List<ShopifyInventory>();
-                    var _shopifyService = new ProductService(Settings.General.ShopifyUrl, Settings.General.ShopAccessToken);
-                    var _products = await _shopifyService.ListAsync();
+                    var _shopifyService = new ProductService(Settings.General.ShopifyUrl, Settings.General.ShopifyPass);
+                    var _productsShopify = await _shopifyService.ListAsync();
 
-                    foreach (ColaArticulos _product in _ColaArticulos)
+                    foreach (var _product in _productsShopify?.Items)
                     {
-                        _product.Sincronizado = false;
-                        var _shopifyProduct = _ShopifyInventory.Where(w => w.sku == _product.SKU).FirstOrDefault();
-                        if(!string.IsNullOrEmpty(_shopifyProduct.sku))
+                        ColaArticulos _articulo = _colaArticulos.Where(w => w.SKU == _product.Variants.FirstOrDefault().SKU).FirstOrDefault();
+                        var _item = _product.Variants.FirstOrDefault();
+
+                        if (_articulo is null)
                         {
-                            _product.Cantidad = _shopifyProduct.available;
-                            _product.Sincronizado = true;
+                            dbparams = new DynamicParameters();
+                            dbparams.Add("SKU", _item.SKU, DbType.String);
+                            dbparams.Add("Cantidad", _item.InventoryQuantity ?? 0, DbType.Int32);
+                            dbparams.Add("FechaRegistro", _date, DbType.DateTime);
+                            dbparams.Add("Sincronizado", false, DbType.Boolean);
+
+                            db.Query<int>($"INSERT INTO ColaArticulos(SKU,Cantidad,FechaRegistro,Sincronizado) " +
+                            $"VALUES(@SKU, @Cantidad, @FechaRegistro, @Sincronizado) " +
+                            $"", dbparams, commandType: CommandType.Text, transaction: tran).FirstOrDefault();
                         }
+                        else
+                        {
+                            dbparams = new DynamicParameters();
+                            dbparams.Add("ID", _articulo.ID, DbType.Int32);
+                            dbparams.Add("Cantidad", _item.InventoryQuantity, DbType.Int32);
+                            dbparams.Add("FechaActualizacion", _date, DbType.DateTime);
+                            dbparams.Add("Sincronizado", true, DbType.Boolean);
 
-                        dbparams = new DynamicParameters();
-                        dbparams.Add("ID", _product.ID, DbType.Int32);
-                        dbparams.Add("Cantidad", _product.Cantidad, DbType.Int32);
-                        dbparams.Add("FechaActualizacion", _date, DbType.DateTime);
-                        dbparams.Add("Sincronizado", _product.Sincronizado, DbType.Boolean);
-
-                        db.Query<int>($"UPDATE ColaArticulos " +
-                        $"SET Cantidad = @Cantidad " +
-                        $",FechaActualizacion = @FechaActualizacion " +
-                        $",Sincronizado = @Sincronizado " +
-                        $"WHERE ID = @ID ", dbparams, commandType: CommandType.Text, transaction: tran).FirstOrDefault();
+                            db.Query<int>($"UPDATE ColaArticulos " +
+                            $"SET Cantidad = @Cantidad " +
+                            $",FechaActualizacion = @FechaActualizacion " +
+                            $",Sincronizado = @Sincronizado " +
+                            $"WHERE ID = @ID ", dbparams, commandType: CommandType.Text, transaction: tran).FirstOrDefault();
+                        }
                     }
 
                     tran.Commit();
