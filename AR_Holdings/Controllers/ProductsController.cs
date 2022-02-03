@@ -20,15 +20,15 @@ namespace AR_Holdings.Controllers
             _Synchronize = Synchronize;
         }
 
-        [HttpGet("ProductsShopifyAsync")]
-        public async Task<string> ProductsShopifyAsync()
+        [HttpGet("LoadShopifyAsync")]
+        public async Task<string> LoadShopifyAsync()
         {
             try
             {
-                await _Synchronize.ProductsShopifyAsync();
+                await _Synchronize.LoadShopifyAsync();
 
                 HttpContext.Response.StatusCode = StatusCodes.Status200OK;
-                return "OK";
+                return "COMPLETE";
             }
             catch (Exception)
             {
@@ -37,6 +37,38 @@ namespace AR_Holdings.Controllers
             }
         }
 
-        
+        [HttpGet("ProductsShopifyAsync")]
+        public async Task<string> ProductsShopifyAsync()
+        {
+            try
+            {
+                await _Synchronize.ProductsShopifyAsync();
+
+                HttpContext.Response.StatusCode = StatusCodes.Status200OK;
+                return "COMPLETE";
+            }
+            catch (Exception)
+            {
+                HttpContext.Response.StatusCode = StatusCodes.Status500InternalServerError;
+                throw new Exception("Ocurrió un error inesperado, intentelo nuevamente.");
+            }
+        }
+
+        [HttpGet("ShopifyAsync")]
+        public async Task<string> ShopifyAsync()
+        {
+            try
+            {
+                await _Synchronize.ShopifyAsync();
+
+                HttpContext.Response.StatusCode = StatusCodes.Status200OK;
+                return "COMPLETE";
+            }
+            catch (Exception)
+            {
+                HttpContext.Response.StatusCode = StatusCodes.Status500InternalServerError;
+                throw new Exception("Ocurrió un error inesperado, intentelo nuevamente.");
+            }
+        }
     }
 }

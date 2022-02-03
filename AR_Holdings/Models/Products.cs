@@ -4,8 +4,6 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AR_Holdings.Models
 {
-    public class Products
-    {
         [Table("ColaArticulos")]
         public class ColaArticulos
         {
@@ -20,11 +18,5 @@ namespace AR_Holdings.Models
             public DateTime FechaActualizacion { get; set; }
             public bool Sincronizado { get; set; }
         }
-
-        public class ShopifyInventory
-        {
-            public string sku { get; set; }
-            public int available { get; set; }
-        }
-    }
+   
 }
