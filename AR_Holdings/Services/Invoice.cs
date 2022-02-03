@@ -4,12 +4,13 @@ using System.Linq;
 using AR_Holdings.DBContent;
 using AR_Holdings.Models;
 using Dapper;
+using ShopifySharp;
 
 namespace AR_Holdings.Services
 {
     public interface IInvoice
     {
-        void SaveInvoice(Invoices invoices);
+        void SaveInvoice(Order order);
     }
 
     public class Invoice: IInvoice
@@ -21,10 +22,11 @@ namespace AR_Holdings.Services
             _Dapper = Dapper;
         }
 
-        public void SaveInvoice(Invoices invoices)
+        public void SaveInvoice(Order order)
         {
             // *** Relaciòn de Cliente x Orden debe estar en la tabla Orden, si no existe cliente, si inserta.
 
+            var invoices = new Invoices();
             using IDbConnection db = _Dapper.GetDbconnection();
             try
             {
