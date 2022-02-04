@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using AR_Holdings.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -14,10 +15,12 @@ namespace AR_Holdings.Controllers
     public class ProductsController : Controller
     {
         private readonly ISynchronize _Synchronize;
+        private readonly ILogger<ProductsController> _logger;
 
-        public ProductsController(ISynchronize Synchronize)
+        public ProductsController(ISynchronize Synchronize, ILogger<ProductsController> logger)
         {
             _Synchronize = Synchronize;
+            _logger = logger;
         }
 
         [HttpGet("LoadShopifyAsync")]
@@ -30,9 +33,10 @@ namespace AR_Holdings.Controllers
                 HttpContext.Response.StatusCode = StatusCodes.Status200OK;
                 return "COMPLETED";
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 HttpContext.Response.StatusCode = StatusCodes.Status500InternalServerError;
+                _logger.LogError($"{ ex.Message} - {ex.StackTrace}");
                 throw new Exception("Ocurrió un error inesperado, intentelo nuevamente.");
             }
         }
@@ -47,9 +51,10 @@ namespace AR_Holdings.Controllers
                 HttpContext.Response.StatusCode = StatusCodes.Status200OK;
                 return "COMPLETED";
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 HttpContext.Response.StatusCode = StatusCodes.Status500InternalServerError;
+                _logger.LogError($"{ ex.Message} - {ex.StackTrace}");
                 throw new Exception("Ocurrió un error inesperado, intentelo nuevamente.");
             }
         }
@@ -64,9 +69,10 @@ namespace AR_Holdings.Controllers
                 HttpContext.Response.StatusCode = StatusCodes.Status200OK;
                 return "COMPLETED";
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 HttpContext.Response.StatusCode = StatusCodes.Status500InternalServerError;
+                _logger.LogError($"{ ex.Message} - {ex.StackTrace}");
                 throw new Exception("Ocurrió un error inesperado, intentelo nuevamente.");
             }
         }

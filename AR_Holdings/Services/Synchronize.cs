@@ -7,6 +7,7 @@ using AR_Holdings.DBContent;
 using AR_Holdings.Models;
 using AR_Holdings.Utilities;
 using Dapper;
+using Microsoft.Extensions.Logging;
 using ShopifySharp;
 
 namespace AR_Holdings.Services
@@ -21,10 +22,12 @@ namespace AR_Holdings.Services
     public class Synchronize: ISynchronize
     {
         private readonly IDapper _Dapper;
+        private readonly ILogger<Synchronize> _logger;
 
-        public Synchronize(IDapper Dapper)
+        public Synchronize(IDapper Dapper, ILogger<Synchronize> logger)
         {
             _Dapper = Dapper;
+            _logger = logger;
         }
 
         public async Task LoadShopifyAsync()
@@ -67,12 +70,14 @@ namespace AR_Holdings.Services
                 catch (Exception ex)
                 {
                     tran.Rollback();
+                    _logger.LogError($"{ ex.Message} - {ex.StackTrace}");
                     throw ex;
                 }
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                throw e;
+                _logger.LogError($"{ ex.Message} - {ex.StackTrace}");
+                throw ex;
             }
             finally
             {
@@ -134,12 +139,14 @@ namespace AR_Holdings.Services
                 catch (Exception ex)
                 {
                     tran.Rollback();
+                    _logger.LogError($"{ ex.Message} - {ex.StackTrace}");
                     throw ex;
                 }
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                throw e;
+                _logger.LogError($"{ ex.Message} - {ex.StackTrace}");
+                throw ex;
             }
             finally
             {
@@ -200,12 +207,14 @@ namespace AR_Holdings.Services
                 catch (Exception ex)
                 {
                     tran.Rollback();
+                    _logger.LogError($"{ ex.Message} - {ex.StackTrace}");
                     throw ex;
                 }
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                throw e;
+                _logger.LogError($"{ ex.Message} - {ex.StackTrace}");
+                throw ex;
             }
             finally
             {

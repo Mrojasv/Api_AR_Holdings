@@ -1,0 +1,145 @@
+Information: 02/03/2022 19:36:30 Now listening on: https://localhost:5001
+Information: 02/03/2022 19:36:30 Now listening on: http://localhost:5000
+Information: 02/03/2022 19:36:30 Application started. Press Ctrl+C to shut down.
+Information: 02/03/2022 19:36:30 Hosting environment: Development
+Information: 02/03/2022 19:36:30 Content root path: /Users/mrojas/Documents/Github/Api_AR_Holdings/AR_Holdings
+Error: 02/03/2022 19:38:02 Violation of UNIQUE KEY constraint 'UC_NumeroOrden'. Cannot insert duplicate key in object 'dbo.Orden'. The duplicate key value is (1). -    at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at System.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at System.Data.SqlClient.SqlDataReader.Read()
+   at Dapper.SqlMapper.QueryImpl[T](IDbConnection cnn, CommandDefinition command, Type effectiveType)+MoveNext() in /_/Dapper/SqlMapper.cs:line 1111
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType) in /_/Dapper/SqlMapper.cs:line 734
+   at AR_Holdings.Services.Invoice.SaveInvoice(Order order) in /Users/mrojas/Documents/Github/Api_AR_Holdings/AR_Holdings/Services/Invoice.cs:line 91
+Error: 02/03/2022 19:38:02 Violation of UNIQUE KEY constraint 'UC_NumeroOrden'. Cannot insert duplicate key in object 'dbo.Orden'. The duplicate key value is (1). -    at AR_Holdings.Services.Invoice.SaveInvoice(Order order) in /Users/mrojas/Documents/Github/Api_AR_Holdings/AR_Holdings/Services/Invoice.cs:line 133
+Error: 02/03/2022 19:38:11 Violation of UNIQUE KEY constraint 'UC_NumeroOrden'. Cannot insert duplicate key in object 'dbo.Orden'. The duplicate key value is (1). -    at AR_Holdings.Services.Invoice.SaveInvoice(Order order) in /Users/mrojas/Documents/Github/Api_AR_Holdings/AR_Holdings/Services/Invoice.cs:line 139
+   at AR_Holdings.Controllers.InvoicesController.Post(Order order) in /Users/mrojas/Documents/Github/Api_AR_Holdings/AR_Holdings/Controllers/InvoicesController.cs:line 46
+Error: 02/03/2022 19:58:05 Violation of UNIQUE KEY constraint 'UC_NumeroOrden'. Cannot insert duplicate key in object 'dbo.Orden'. The duplicate key value is (1). -    at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at System.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at System.Data.SqlClient.SqlDataReader.Read()
+   at Dapper.SqlMapper.QueryImpl[T](IDbConnection cnn, CommandDefinition command, Type effectiveType)+MoveNext() in /_/Dapper/SqlMapper.cs:line 1111
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType) in /_/Dapper/SqlMapper.cs:line 734
+   at AR_Holdings.Services.Invoice.SaveInvoice(Order order) in /Users/mrojas/Documents/Github/Api_AR_Holdings/AR_Holdings/Services/Invoice.cs:line 91
+Error: 02/03/2022 19:58:05 Violation of UNIQUE KEY constraint 'UC_NumeroOrden'. Cannot insert duplicate key in object 'dbo.Orden'. The duplicate key value is (1). -    at AR_Holdings.Services.Invoice.SaveInvoice(Order order) in /Users/mrojas/Documents/Github/Api_AR_Holdings/AR_Holdings/Services/Invoice.cs:line 133
+Error: 02/03/2022 19:58:05 Violation of UNIQUE KEY constraint 'UC_NumeroOrden'. Cannot insert duplicate key in object 'dbo.Orden'. The duplicate key value is (1). -    at AR_Holdings.Services.Invoice.SaveInvoice(Order order) in /Users/mrojas/Documents/Github/Api_AR_Holdings/AR_Holdings/Services/Invoice.cs:line 139
+   at AR_Holdings.Controllers.InvoicesController.Post(Order order) in /Users/mrojas/Documents/Github/Api_AR_Holdings/AR_Holdings/Controllers/InvoicesController.cs:line 46
+Error: 02/03/2022 19:58:06 Violation of UNIQUE KEY constraint 'UC_NumeroOrden'. Cannot insert duplicate key in object 'dbo.Orden'. The duplicate key value is (1). -    at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at System.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at System.Data.SqlClient.SqlDataReader.Read()
+   at Dapper.SqlMapper.QueryImpl[T](IDbConnection cnn, CommandDefinition command, Type effectiveType)+MoveNext() in /_/Dapper/SqlMapper.cs:line 1111
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType) in /_/Dapper/SqlMapper.cs:line 734
+   at AR_Holdings.Services.Invoice.SaveInvoice(Order order) in /Users/mrojas/Documents/Github/Api_AR_Holdings/AR_Holdings/Services/Invoice.cs:line 91
+Error: 02/03/2022 19:58:06 Violation of UNIQUE KEY constraint 'UC_NumeroOrden'. Cannot insert duplicate key in object 'dbo.Orden'. The duplicate key value is (1). -    at AR_Holdings.Services.Invoice.SaveInvoice(Order order) in /Users/mrojas/Documents/Github/Api_AR_Holdings/AR_Holdings/Services/Invoice.cs:line 133
+Error: 02/03/2022 19:58:15 Violation of UNIQUE KEY constraint 'UC_NumeroOrden'. Cannot insert duplicate key in object 'dbo.Orden'. The duplicate key value is (1). -    at AR_Holdings.Services.Invoice.SaveInvoice(Order order) in /Users/mrojas/Documents/Github/Api_AR_Holdings/AR_Holdings/Services/Invoice.cs:line 139
+   at AR_Holdings.Controllers.InvoicesController.Post(Order order) in /Users/mrojas/Documents/Github/Api_AR_Holdings/AR_Holdings/Controllers/InvoicesController.cs:line 46
+Information: 02/03/2022 21:12:26 Now listening on: https://localhost:5001
+Information: 02/03/2022 21:12:26 Now listening on: http://localhost:5000
+Information: 02/03/2022 21:12:26 Application started. Press Ctrl+C to shut down.
+Information: 02/03/2022 21:12:26 Hosting environment: Development
+Information: 02/03/2022 21:12:26 Content root path: /Users/mrojas/Documents/Github/Api_AR_Holdings/AR_Holdings
+Information: 02/03/2022 21:15:03 Now listening on: https://localhost:5001
+Information: 02/03/2022 21:15:03 Now listening on: http://localhost:5000
+Information: 02/03/2022 21:15:03 Application started. Press Ctrl+C to shut down.
+Information: 02/03/2022 21:15:03 Hosting environment: Development
+Information: 02/03/2022 21:15:03 Content root path: /Users/mrojas/Documents/Github/Api_AR_Holdings/AR_Holdings
+Information: 02/03/2022 21:18:28 Now listening on: https://localhost:5001
+Information: 02/03/2022 21:18:28 Now listening on: http://localhost:5000
+Information: 02/03/2022 21:18:28 Application started. Press Ctrl+C to shut down.
+Information: 02/03/2022 21:18:28 Hosting environment: Development
+Information: 02/03/2022 21:18:28 Content root path: /Users/mrojas/Documents/Github/Api_AR_Holdings/AR_Holdings
+Information: 02/03/2022 21:21:55 Now listening on: https://localhost:5001
+Information: 02/03/2022 21:21:55 Now listening on: http://localhost:5000
+Information: 02/03/2022 21:21:55 Application started. Press Ctrl+C to shut down.
+Information: 02/03/2022 21:21:55 Hosting environment: Development
+Information: 02/03/2022 21:21:55 Content root path: /Users/mrojas/Documents/Github/Api_AR_Holdings/AR_Holdings
+Information: 02/03/2022 21:26:45 Now listening on: https://localhost:5001
+Information: 02/03/2022 21:26:45 Now listening on: http://localhost:5000
+Information: 02/03/2022 21:26:45 Application started. Press Ctrl+C to shut down.
+Information: 02/03/2022 21:26:45 Hosting environment: Development
+Information: 02/03/2022 21:26:45 Content root path: /Users/mrojas/Documents/Github/Api_AR_Holdings/AR_Holdings
+Information: 02/03/2022 21:27:36 Now listening on: https://localhost:5001
+Information: 02/03/2022 21:27:36 Now listening on: http://localhost:5000
+Information: 02/03/2022 21:27:36 Application started. Press Ctrl+C to shut down.
+Information: 02/03/2022 21:27:36 Hosting environment: Development
+Information: 02/03/2022 21:27:36 Content root path: /Users/mrojas/Documents/Github/Api_AR_Holdings/AR_Holdings
+Information: 02/03/2022 21:32:04 Now listening on: https://localhost:5001
+Information: 02/03/2022 21:32:04 Now listening on: http://localhost:5000
+Information: 02/03/2022 21:32:04 Application started. Press Ctrl+C to shut down.
+Information: 02/03/2022 21:32:04 Hosting environment: Development
+Information: 02/03/2022 21:32:04 Content root path: /Users/mrojas/Documents/Github/Api_AR_Holdings/AR_Holdings
+Information: 02/03/2022 21:36:28 Now listening on: https://localhost:5001
+Information: 02/03/2022 21:36:28 Now listening on: http://localhost:5000
+Information: 02/03/2022 21:36:28 Application started. Press Ctrl+C to shut down.
+Information: 02/03/2022 21:36:28 Hosting environment: Development
+Information: 02/03/2022 21:36:28 Content root path: /Users/mrojas/Documents/Github/Api_AR_Holdings/AR_Holdings
+Information: 02/03/2022 21:38:12 Now listening on: https://localhost:5001
+Information: 02/03/2022 21:38:12 Now listening on: http://localhost:5000
+Information: 02/03/2022 21:38:12 Application started. Press Ctrl+C to shut down.
+Information: 02/03/2022 21:38:12 Hosting environment: Development
+Information: 02/03/2022 21:38:12 Content root path: /Users/mrojas/Documents/Github/Api_AR_Holdings/AR_Holdings
+Information: 02/03/2022 21:42:49 Now listening on: https://localhost:5001
+Information: 02/03/2022 21:42:49 Now listening on: http://localhost:5000
+Information: 02/03/2022 21:42:49 Application started. Press Ctrl+C to shut down.
+Information: 02/03/2022 21:42:49 Hosting environment: Development
+Information: 02/03/2022 21:42:49 Content root path: /Users/mrojas/Documents/Github/Api_AR_Holdings/AR_Holdings
+Information: 02/03/2022 21:46:34 Now listening on: https://localhost:5001
+Information: 02/03/2022 21:46:34 Now listening on: http://localhost:5000
+Information: 02/03/2022 21:46:34 Application started. Press Ctrl+C to shut down.
+Information: 02/03/2022 21:46:34 Hosting environment: Development
+Information: 02/03/2022 21:46:34 Content root path: /Users/mrojas/Documents/Github/Api_AR_Holdings/AR_Holdings
+Information: 02/03/2022 21:49:23 Now listening on: https://localhost:5001
+Information: 02/03/2022 21:49:23 Now listening on: http://localhost:5000
+Information: 02/03/2022 21:49:23 Application started. Press Ctrl+C to shut down.
+Information: 02/03/2022 21:49:23 Hosting environment: Development
+Information: 02/03/2022 21:49:23 Content root path: /Users/mrojas/Documents/Github/Api_AR_Holdings/AR_Holdings
+Information: 02/03/2022 21:50:55 Now listening on: https://localhost:5001
+Information: 02/03/2022 21:50:55 Now listening on: http://localhost:5000
+Information: 02/03/2022 21:50:55 Application started. Press Ctrl+C to shut down.
+Information: 02/03/2022 21:50:55 Hosting environment: Development
+Information: 02/03/2022 21:50:55 Content root path: /Users/mrojas/Documents/Github/Api_AR_Holdings/AR_Holdings
+Information: 02/03/2022 21:53:32 Now listening on: https://localhost:5001
+Information: 02/03/2022 21:53:32 Now listening on: http://localhost:5000
+Information: 02/03/2022 21:53:32 Application started. Press Ctrl+C to shut down.
+Information: 02/03/2022 21:53:32 Hosting environment: Development
+Information: 02/03/2022 21:53:32 Content root path: /Users/mrojas/Documents/Github/Api_AR_Holdings/AR_Holdings
+Information: 02/03/2022 21:55:21 Now listening on: https://localhost:5001
+Information: 02/03/2022 21:55:21 Now listening on: http://localhost:5000
+Information: 02/03/2022 21:55:21 Application started. Press Ctrl+C to shut down.
+Information: 02/03/2022 21:55:21 Hosting environment: Development
+Information: 02/03/2022 21:55:21 Content root path: /Users/mrojas/Documents/Github/Api_AR_Holdings/AR_Holdings
+Information: 02/03/2022 22:05:59 Now listening on: https://localhost:5001
+Information: 02/03/2022 22:05:59 Now listening on: http://localhost:5000
+Information: 02/03/2022 22:05:59 Application started. Press Ctrl+C to shut down.
+Information: 02/03/2022 22:05:59 Hosting environment: Development
+Information: 02/03/2022 22:05:59 Content root path: /Users/mrojas/Documents/Github/Api_AR_Holdings/AR_Holdings
+Error: 02/03/2022 22:06:29 Violation of UNIQUE KEY constraint 'UC_NumeroOrden'. Cannot insert duplicate key in object 'dbo.Orden'. The duplicate key value is (1234). -    at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at System.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at System.Data.SqlClient.SqlDataReader.Read()
+   at Dapper.SqlMapper.QueryImpl[T](IDbConnection cnn, CommandDefinition command, Type effectiveType)+MoveNext() in /_/Dapper/SqlMapper.cs:line 1111
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType) in /_/Dapper/SqlMapper.cs:line 734
+   at AR_Holdings.Services.Invoice.SaveInvoice(ShopifyOrder order) in /Users/mrojas/Documents/Github/Api_AR_Holdings/AR_Holdings/Services/Invoice.cs:line 92
+Error: 02/03/2022 22:06:29 Violation of UNIQUE KEY constraint 'UC_NumeroOrden'. Cannot insert duplicate key in object 'dbo.Orden'. The duplicate key value is (1234). -    at AR_Holdings.Services.Invoice.SaveInvoice(ShopifyOrder order) in /Users/mrojas/Documents/Github/Api_AR_Holdings/AR_Holdings/Services/Invoice.cs:line 134
+Error: 02/03/2022 22:06:40 Violation of UNIQUE KEY constraint 'UC_NumeroOrden'. Cannot insert duplicate key in object 'dbo.Orden'. The duplicate key value is (1234). -    at AR_Holdings.Services.Invoice.SaveInvoice(ShopifyOrder order) in /Users/mrojas/Documents/Github/Api_AR_Holdings/AR_Holdings/Services/Invoice.cs:line 140
+   at AR_Holdings.Controllers.InvoicesController.Post(Object order) in /Users/mrojas/Documents/Github/Api_AR_Holdings/AR_Holdings/Controllers/InvoicesController.cs:line 48

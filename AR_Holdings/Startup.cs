@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using AR_Holdings.DBContent;
@@ -38,7 +39,7 @@ namespace AR_Holdings
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)
         {
             if (env.IsDevelopment())
             {
@@ -55,6 +56,8 @@ namespace AR_Holdings
             {
                 endpoints.MapControllers();
             });
+
+            loggerFactory.AddFile(Path.Combine(Directory.GetCurrentDirectory(), "Logs"));
         }
     }
 }

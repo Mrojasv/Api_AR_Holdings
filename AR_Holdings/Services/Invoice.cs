@@ -5,25 +5,29 @@ using System.Linq;
 using AR_Holdings.DBContent;
 using AR_Holdings.Models;
 using Dapper;
+using Microsoft.Extensions.Logging;
 using ShopifySharp;
+using static AR_Holdings.Models.Shopify;
 
 namespace AR_Holdings.Services
 {
     public interface IInvoice
     {
-        void SaveInvoice(Order order);
+        void SaveInvoice(ShopifyOrder order);
     }
 
     public class Invoice: IInvoice
     {
         private readonly IDapper _Dapper;
+        private readonly ILogger<Invoice> _logger;
 
-        public Invoice(IDapper Dapper)
+        public Invoice(IDapper Dapper, ILogger<Invoice> logger)
         {
             _Dapper = Dapper;
+            _logger = logger;
         }
 
-        public void SaveInvoice(Order order)
+        public void SaveInvoice(ShopifyOrder order)
         {
             // *** Relaciòn de Cliente x Orden debe estar en la tabla Orden, si no existe cliente, si inserta.
             DateTime _date = DateTime.Now;
@@ -34,36 +38,36 @@ namespace AR_Holdings.Services
                 {
                     Orden = new Orden
                     {
-                        NumeroOrden = order.OrderNumber ?? 1,
-                        SubTotal = order.SubtotalPrice ?? 0,
-                        TotalImpuestos = order.TotalTax ?? 0,
-                        Total = order.TotalPrice ?? 0,
-                        FechaOrden = order.CreatedAt?.DateTime
+                        NumeroOrden = order.order_number ?? 0,
+                        SubTotal = order.subtotal_price ?? 0,
+                        TotalImpuestos = order.total_tax ?? 0,
+                        Total = order.total_price ?? 0,
+                        FechaOrden = order.created_at
                     },
                     Cliente = new Cliente
                     {
-                        Nombre = order.Customer.FirstName ?? "Jhon",
-                        Apellido = order.Customer.LastName,
-                        Email = order.Customer.Email,
-                        Telefono = order.Customer.Phone,
-                        Direccion = string.Empty // order.Customer.Addresses.FirstOrDefault().Address1;
+                        Nombre = order.customer.first_name ?? "Anonimo",
+                        Apellido = order.customer.last_name,
+                        Email = order.customer.email,
+                        Telefono = order.customer.phone,
+                        Direccion = order.customer.default_address.address1
                     }
                 };
 
                 var _articulos = new List<Articulos>();
-                if (order.LineItems != null && order.LineItems.Any())
+                if (order.line_items != null && order.line_items.Any())
                 {
-                    foreach (var item in order.LineItems)
+                    foreach (var item in order.line_items)
                     {
                         var _articulo = new Articulos
                         {
-                            SKU = item.SKU,
-                            Precio = item.Price ?? 0,
-                            Cantidad = item.Quantity ?? 0,
-                            Nombre = item.Name,
-                            SubTotal = (item.Price * item.Quantity) ?? 0,
-                            TotalImpuestos = (decimal)0,
-                            Total = (item.Price * item.Quantity) ?? 0
+                            SKU = item.sku,
+                            Precio = item.price ?? 0,
+                            Cantidad = item.quantity ?? 0,
+                            Nombre = item.name,
+                            SubTotal = (item.price * item.quantity) ?? 0,
+                            TotalImpuestos = (decimal)0, //no encuentro insumos para calcularlo
+                            Total = (item.price * item.quantity) ?? 0
                         };
 
                         _articulos.Add(_articulo);
@@ -111,10 +115,10 @@ namespace AR_Holdings.Services
                     dbparams = new DynamicParameters();
                     dbparams.Add("OrderId", _orderId, DbType.Int32);
                     dbparams.Add("Nombre", invoices.Cliente.Nombre, DbType.String);
-                    dbparams.Add("Apellido", invoices.Orden.TotalImpuestos, DbType.Decimal);
-                    dbparams.Add("Email", invoices.Orden.Total, DbType.Decimal);
-                    dbparams.Add("Telefono", _date, DbType.DateTime);
-                    dbparams.Add("Direccion", invoices.Orden.FechaOrden, DbType.DateTime);
+                    dbparams.Add("Apellido", invoices.Cliente.Apellido, DbType.String);
+                    dbparams.Add("Email", invoices.Cliente.Email, DbType.String);
+                    dbparams.Add("Telefono", invoices.Cliente.Telefono, DbType.String);
+                    dbparams.Add("Direccion", invoices.Cliente.Direccion, DbType.String);
 
                     var _clienteId = db.Query<int>($"INSERT INTO Cliente (OrderId,Nombre,Apellido,Email,Telefono, Direccion) " +
                         $"OUTPUT INSERTED.ID " +
@@ -126,12 +130,14 @@ namespace AR_Holdings.Services
                 catch (Exception ex)
                 {
                     tran.Rollback();
+                    _logger.LogError($"{ ex.Message} - {ex.StackTrace}");
                     throw ex;
                 }
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                throw e;
+                _logger.LogError($"{ ex.Message} - {ex.StackTrace}");
+                throw ex;
             }
             finally
             {

@@ -4,7 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using AR_Holdings.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using ShopifySharp;
+using static AR_Holdings.Models.Shopify;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -14,10 +16,12 @@ namespace AR_Holdings.Controllers
     public class InvoicesController : Controller
     {
         private readonly IInvoice _Invoice;
+        private readonly ILogger<InvoicesController> _logger;
 
-        public InvoicesController(IInvoice Invoice)
+        public InvoicesController(IInvoice Invoice, ILogger<InvoicesController> logger)
         {
             _Invoice = Invoice;
+            _logger = logger;
         }
 
         // GET: api/values
@@ -36,14 +40,16 @@ namespace AR_Holdings.Controllers
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody] Order order)
+        public void Post([FromBody] Object order)
         {
             try
             {
-                _Invoice.SaveInvoice(order);
+                ShopifyOrder deserializedOrder = Newtonsoft.Json.JsonConvert.DeserializeObject<ShopifyOrder>(order.ToString());
+                _Invoice.SaveInvoice(deserializedOrder);
             }
             catch (Exception ex)
             {
+                _logger.LogError($"{ ex.Message} - {ex.StackTrace}");
                 //throw new Exception("Ocurrió un error inesperado, intentelo nuevamente.");
             }
         }

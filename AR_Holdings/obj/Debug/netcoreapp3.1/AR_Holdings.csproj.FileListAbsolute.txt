@@ -75,3 +75,4 @@
 /Users/mrojas/Documents/Github/Api_AR_Holdings/AR_Holdings/obj/Debug/netcoreapp3.1/AR_Holdings.dll
 /Users/mrojas/Documents/Github/Api_AR_Holdings/AR_Holdings/obj/Debug/netcoreapp3.1/AR_Holdings.pdb
 /Users/mrojas/Documents/Github/Api_AR_Holdings/AR_Holdings/obj/Debug/netcoreapp3.1/AR_Holdings.genruntimeconfig.cache
+/Users/mrojas/Documents/Github/Api_AR_Holdings/AR_Holdings/obj/Debug/netcoreapp3.1/AR_Holdings.csproj.AssemblyReference.cache
