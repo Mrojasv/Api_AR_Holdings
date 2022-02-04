@@ -28,7 +28,7 @@ namespace AR_Holdings.Controllers
                 await _Synchronize.LoadShopifyAsync();
 
                 HttpContext.Response.StatusCode = StatusCodes.Status200OK;
-                return "COMPLETE";
+                return "COMPLETED";
             }
             catch (Exception)
             {
@@ -45,7 +45,7 @@ namespace AR_Holdings.Controllers
                 await _Synchronize.ProductsShopifyAsync();
 
                 HttpContext.Response.StatusCode = StatusCodes.Status200OK;
-                return "COMPLETE";
+                return "COMPLETED";
             }
             catch (Exception)
             {
@@ -62,7 +62,7 @@ namespace AR_Holdings.Controllers
                 await _Synchronize.ShopifyAsync();
 
                 HttpContext.Response.StatusCode = StatusCodes.Status200OK;
-                return "COMPLETE";
+                return "COMPLETED";
             }
             catch (Exception)
             {

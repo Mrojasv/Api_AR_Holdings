@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using AR_Holdings.DBContent;
@@ -25,12 +26,50 @@ namespace AR_Holdings.Services
         public void SaveInvoice(Order order)
         {
             // *** Relaciòn de Cliente x Orden debe estar en la tabla Orden, si no existe cliente, si inserta.
-
-            var invoices = new Invoices();
+            DateTime _date = DateTime.Now;
             using IDbConnection db = _Dapper.GetDbconnection();
             try
             {
-                DateTime _date = DateTime.Now;
+                var invoices = new Invoices
+                {
+                    Orden = new Orden
+                    {
+                        NumeroOrden = order.OrderNumber ?? 1,
+                        SubTotal = order.SubtotalPrice ?? 0,
+                        TotalImpuestos = order.TotalTax ?? 0,
+                        Total = order.TotalPrice ?? 0,
+                        FechaOrden = order.CreatedAt?.DateTime
+                    },
+                    Cliente = new Cliente
+                    {
+                        Nombre = order.Customer.FirstName ?? "Jhon",
+                        Apellido = order.Customer.LastName,
+                        Email = order.Customer.Email,
+                        Telefono = order.Customer.Phone,
+                        Direccion = string.Empty // order.Customer.Addresses.FirstOrDefault().Address1;
+                    }
+                };
+
+                var _articulos = new List<Articulos>();
+                if (order.LineItems != null && order.LineItems.Any())
+                {
+                    foreach (var item in order.LineItems)
+                    {
+                        var _articulo = new Articulos
+                        {
+                            SKU = item.SKU,
+                            Precio = item.Price ?? 0,
+                            Cantidad = item.Quantity ?? 0,
+                            Nombre = item.Name,
+                            SubTotal = (item.Price * item.Quantity) ?? 0,
+                            TotalImpuestos = (decimal)0,
+                            Total = (item.Price * item.Quantity) ?? 0
+                        };
+
+                        _articulos.Add(_articulo);
+                    }
+                }
+                invoices.Articulos = _articulos;
 
                 if (db.State == ConnectionState.Closed)
                     db.Open();

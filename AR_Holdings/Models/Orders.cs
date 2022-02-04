@@ -11,7 +11,7 @@ namespace AR_Holdings.Models
             [Key]
             public int ID { get; set; }
             [Required]
-            public string NumeroOrden { get; set; }
+            public int NumeroOrden { get; set; }
             [Required]
             public decimal SubTotal { get; set; }
             [Required]
@@ -20,7 +20,7 @@ namespace AR_Holdings.Models
             public decimal Total { get; set; }
             [Required]
             public DateTime FechaCreacion { get; set; }
-            public DateTime FechaOrden { get; set; }
+            public DateTime? FechaOrden { get; set; }
         }
 
         [Table("Articulos")]

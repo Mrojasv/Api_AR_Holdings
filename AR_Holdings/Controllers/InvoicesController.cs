@@ -42,9 +42,9 @@ namespace AR_Holdings.Controllers
             {
                 _Invoice.SaveInvoice(order);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw new Exception("Ocurrió un error inesperado, intentelo nuevamente.");
+                //throw new Exception("Ocurrió un error inesperado, intentelo nuevamente.");
             }
         }
     }

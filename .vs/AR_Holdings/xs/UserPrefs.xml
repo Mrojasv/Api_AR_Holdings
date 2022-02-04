@@ -1,21 +1,23 @@
 ﻿<Properties StartupConfiguration="{4CD33DB4-4491-4C15-A84B-892F59533B33}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="AR_Holdings/Controllers/InvoicesController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="AR_Holdings/Services/Invoice.cs">
     <Files>
-      <File FileName="AR_Holdings/Controllers/ProductsController.cs" Line="21" Column="10" />
       <File FileName="AR_Holdings/Services/Synchronize.cs" Line="84" Column="49" />
-      <File FileName="AR_Holdings/Services/Orders.cs" Line="15" Column="35" />
-      <File FileName="AR_Holdings/Controllers/InvoicesController.cs" Line="39" Column="10" />
+      <File FileName="AR_Holdings/Services/Orders.cs" Line="133" Column="14" />
+      <File FileName="AR_Holdings/Controllers/InvoicesController.cs" Line="40" Column="1" />
+      <File FileName="AR_Holdings/Models/Orders.cs" Line="27" Column="31" />
+      <File FileName="AR_Holdings/Models/Clients.cs" Line="8" Column="29" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="AR_Holdings" expanded="True">
             <Node name="AR_Holdings" expanded="True">
-              <Node name="Controllers" expanded="True">
-                <Node name="InvoicesController.cs" selected="True" />
-              </Node>
+              <Node name="Controllers" expanded="True" />
+              <Node name="Models" expanded="True" />
               <Node name="Properties" expanded="True" />
-              <Node name="Services" expanded="True" />
+              <Node name="Services" expanded="True">
+                <Node name="Invoice.cs" selected="True" />
+              </Node>
             </Node>
           </Node>
         </State>
@@ -24,6 +26,7 @@
         <State>
           <Value>_products.Items.Count()</Value>
           <Value>e</Value>
+          <Value>order.CreatedAt?.DateTime</Value>
         </State>
       </Pad>
     </Pads>
@@ -35,8 +38,11 @@
     <BreakpointStore>
       <Breakpoint file="/Users/mrojas/Documents/Github/Api_AR_Holdings/AR_Holdings/Services/Synchronize.cs" relfile="AR_Holdings/Services/Synchronize.cs" line="202" column="1" />
       <Breakpoint file="/Users/mrojas/Documents/Github/Api_AR_Holdings/AR_Holdings/Services/Synchronize.cs" relfile="AR_Holdings/Services/Synchronize.cs" line="208" column="1" />
-      <Breakpoint file="/Users/mrojas/Documents/Github/Api_AR_Holdings/AR_Holdings/Controllers/InvoicesController.cs" relfile="AR_Holdings/Controllers/InvoicesController.cs" line="26" column="1" />
-      <Breakpoint file="/Users/mrojas/Documents/Github/Api_AR_Holdings/AR_Holdings/Controllers/InvoicesController.cs" relfile="AR_Holdings/Controllers/InvoicesController.cs" line="33" column="1" />
+      <Breakpoint file="/Users/mrojas/Documents/Github/Api_AR_Holdings/AR_Holdings/Controllers/InvoicesController.cs" relfile="AR_Holdings/Controllers/InvoicesController.cs" line="40" column="1" />
+      <Breakpoint file="/Users/mrojas/Documents/Github/Api_AR_Holdings/AR_Holdings/Services/Invoice.cs" relfile="AR_Holdings/Services/Invoice.cs" line="29" column="1" />
+      <Breakpoint file="/Users/mrojas/Documents/Github/Api_AR_Holdings/AR_Holdings/Controllers/InvoicesController.cs" relfile="AR_Holdings/Controllers/InvoicesController.cs" line="46" column="1" />
+      <Breakpoint file="/Users/mrojas/Documents/Github/Api_AR_Holdings/AR_Holdings/Services/Invoice.cs" relfile="AR_Holdings/Services/Invoice.cs" line="134" column="1" />
+      <Breakpoint file="/Users/mrojas/Documents/Github/Api_AR_Holdings/AR_Holdings/Services/Invoice.cs" relfile="AR_Holdings/Services/Invoice.cs" line="72" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
