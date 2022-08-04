@@ -143,3 +143,8 @@ Error: 02/03/2022 22:06:29 Violation of UNIQUE KEY constraint 'UC_NumeroOrden'. 
 Error: 02/03/2022 22:06:29 Violation of UNIQUE KEY constraint 'UC_NumeroOrden'. Cannot insert duplicate key in object 'dbo.Orden'. The duplicate key value is (1234). -    at AR_Holdings.Services.Invoice.SaveInvoice(ShopifyOrder order) in /Users/mrojas/Documents/Github/Api_AR_Holdings/AR_Holdings/Services/Invoice.cs:line 134
 Error: 02/03/2022 22:06:40 Violation of UNIQUE KEY constraint 'UC_NumeroOrden'. Cannot insert duplicate key in object 'dbo.Orden'. The duplicate key value is (1234). -    at AR_Holdings.Services.Invoice.SaveInvoice(ShopifyOrder order) in /Users/mrojas/Documents/Github/Api_AR_Holdings/AR_Holdings/Services/Invoice.cs:line 140
    at AR_Holdings.Controllers.InvoicesController.Post(Object order) in /Users/mrojas/Documents/Github/Api_AR_Holdings/AR_Holdings/Controllers/InvoicesController.cs:line 48
+Information: 02/03/2022 22:45:05 Now listening on: https://localhost:5001
+Information: 02/03/2022 22:45:05 Now listening on: http://localhost:5000
+Information: 02/03/2022 22:45:05 Application started. Press Ctrl+C to shut down.
+Information: 02/03/2022 22:45:05 Hosting environment: Development
+Information: 02/03/2022 22:45:05 Content root path: /Users/mrojas/Documents/Github/Api_AR_Holdings/AR_Holdings

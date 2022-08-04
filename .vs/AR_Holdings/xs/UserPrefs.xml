@@ -1,10 +1,11 @@
 ﻿<Properties StartupConfiguration="{4CD33DB4-4491-4C15-A84B-892F59533B33}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="AR_Holdings/Models/Shopify.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="AR_Holdings/Services/Synchronize.cs">
     <Files>
-      <File FileName="AR_Holdings/Services/Synchronize.cs" Line="73" Column="21" />
-      <File FileName="AR_Holdings/Controllers/InvoicesController.cs" Line="46" Column="1" />
-      <File FileName="AR_Holdings/Services/Invoice.cs" Line="47" Column="22" />
-      <File FileName="AR_Holdings/Models/Shopify.cs" Line="10" Column="47" />
+      <File FileName="AR_Holdings/Services/Synchronize.cs" Line="204" Column="1" />
+      <File FileName="AR_Holdings/Controllers/InvoicesController.cs" Line="47" Column="1" />
+      <File FileName="AR_Holdings/Services/Invoice.cs" Line="140" Column="1" />
+      <File FileName="AR_Holdings/Controllers/ProductsController.cs" Line="67" Column="51" />
+      <File FileName="AR_Holdings/Logs/2022-02-04_log.txt" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -12,19 +13,18 @@
           <Node name="AR_Holdings" expanded="True">
             <Node name="AR_Holdings" expanded="True">
               <Node name="Controllers" expanded="True" />
-              <Node name="Models" expanded="True">
-                <Node name="Shopify.cs" selected="True" />
+              <Node name="Logs" expanded="True" />
+              <Node name="Models" expanded="True" />
+              <Node name="Services" expanded="True">
+                <Node name="Synchronize.cs" selected="True" />
               </Node>
-              <Node name="Services" expanded="True" />
             </Node>
           </Node>
         </State>
       </Pad>
       <Pad Id="MonoDevelop.Debugger.WatchPad">
         <State>
-          <Value>_products.Items.Count()</Value>
-          <Value>e</Value>
-          <Value>order.CreatedAt?.DateTime</Value>
+          <Value>order.ToString()</Value>
         </State>
       </Pad>
     </Pads>
@@ -34,11 +34,10 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/mrojas/Documents/Github/Api_AR_Holdings/AR_Holdings/Services/Invoice.cs" relfile="AR_Holdings/Services/Invoice.cs" line="139" column="1" />
-      <Breakpoint file="/Users/mrojas/Documents/Github/Api_AR_Holdings/AR_Holdings/Services/Invoice.cs" relfile="AR_Holdings/Services/Invoice.cs" line="75" column="1" />
-      <Breakpoint file="/Users/mrojas/Documents/Github/Api_AR_Holdings/AR_Holdings/Services/Invoice.cs" relfile="AR_Holdings/Services/Invoice.cs" line="36" column="1" />
-      <Breakpoint file="/Users/mrojas/Documents/Github/Api_AR_Holdings/AR_Holdings/Controllers/InvoicesController.cs" relfile="AR_Holdings/Controllers/InvoicesController.cs" line="46" column="1" />
-      <Breakpoint file="/Users/mrojas/Documents/Github/Api_AR_Holdings/AR_Holdings/Controllers/InvoicesController.cs" relfile="AR_Holdings/Controllers/InvoicesController.cs" line="50" column="1" />
+      <Breakpoint file="/Users/mrojas/Documents/Github/Api_AR_Holdings/AR_Holdings/Controllers/InvoicesController.cs" relfile="AR_Holdings/Controllers/InvoicesController.cs" line="47" column="1" />
+      <Breakpoint file="/Users/mrojas/Documents/Github/Api_AR_Holdings/AR_Holdings/Services/Synchronize.cs" relfile="AR_Holdings/Services/Synchronize.cs" line="199" column="1" />
+      <Breakpoint file="/Users/mrojas/Documents/Github/Api_AR_Holdings/AR_Holdings/Services/Synchronize.cs" relfile="AR_Holdings/Services/Synchronize.cs" line="187" column="1" />
+      <Breakpoint file="/Users/mrojas/Documents/Github/Api_AR_Holdings/AR_Holdings/Services/Synchronize.cs" relfile="AR_Holdings/Services/Synchronize.cs" line="195" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
